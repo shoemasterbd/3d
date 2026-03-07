@@ -1,0 +1,51 @@
+/* Reset standard margins so it fits perfectly */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling down */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Make a side-by-side layout */
+#app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 3D Canvas takes up 70% of the screen */
+#canvas-container {
+    flex: 7; 
+    background-color: #e0e0e0; /* Gray background for 3D */
+    position: relative;
+    cursor: grab;
+}
+
+#canvas-container:active {
+    cursor: grabbing;
+}
+
+/* Sidebar takes up 30% of the screen */
+#sidebar {
+    flex: 3; 
+    background-color: #f8f9fa;
+    padding: 40px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05); /* Soft shadow on the left edge */
+    z-index: 10;
+    overflow-y: auto;
+}
+
+/* Styling the stickers */
+.drag-item {
+    cursor: grab;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 4px;
+    background: white;
+    transition: transform 0.2s;
+}
+
+.drag-item:hover {
+    transform: scale(1.1);
+    border-color: #888;
+}

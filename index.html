@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Shoe Customizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Main container holding both left and right sides -->
+<div id="app-container">
+    
+    <!-- Left Side: 3D Canvas Area -->
+    <div id="canvas-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <!-- Three.js will inject the 3D scene here -->
+    </div>
+
+    <!-- Right Side: Customization Sidebar -->
+    <div id="sidebar">
+        <h2 style="margin-top: 0;">Design Your Shoe</h2>
+        
+        <!-- Color Customization -->
+        <div style="margin-bottom: 40px; margin-top: 30px;">
+            <h4>1. Change Colors</h4>
+            <label style="font-weight: bold; color: #555;">Upper Part</label><br>
+            <input type="color" id="color-upper" value="#ff0000" style="width: 100%; height: 50px; margin-top: 8px; cursor: pointer;">
+        </div>
+
+        <!-- Drag and Drop Attachments -->
+        <div>
+            <h4>2. Drag & Drop Stickers</h4>
+            <p style="color: gray;">Click and drag these onto the 3D box!</p>
+            <div style="display: flex; gap: 15px;">
+                <!-- Sticker 1 -->
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='red'/><text x='10' y='30' fill='white'>Star</text></svg>" class="drag-item" draggable="true" ondragstart="drag(event)" id="sticker-star">
+                
+                <!-- Sticker 2 -->
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'><rect width='50' height='50' fill='blue'/><text x='10' y='30' fill='white'>Logo</text></svg>" class="drag-item" draggable="true" ondragstart="drag(event)" id="sticker-logo">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Three.js Import Map -->
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
