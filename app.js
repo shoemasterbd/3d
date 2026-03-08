@@ -37,7 +37,7 @@ loader.load('shoe.glb', function (gltf) {
     shoeModel = gltf.scene;
     
     // Adjust the size and position of the shoe to fit the screen
-    shoeModel.scale.set(1, 1, 1); // Make it bigger
+    shoeModel.scale.set(10,10, 10); // Make it bigger
     shoeModel.position.set(0, -0.05, 0); // Move it down slightly
     
     // Log the names of the shoe parts to the developer console!
